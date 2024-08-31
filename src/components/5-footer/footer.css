@@ -1,0 +1,45 @@
+
+footer.flex{
+justify-content: space-between;
+  padding-bottom: 1.9rem;
+}
+
+footer.flex ul{
+  gap: 1rem;
+}
+
+
+footer.flex ul a{
+  color: var(--subtitle);
+  font-size: .95rem;
+  font-weight: 400;
+}
+
+
+footer.flex ul a:hover{
+  color: var(--blue);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+footer.flex p{
+  color: #71717a;
+}
+footer.flex p span{
+  color: #31a1eca9;
+  font-weight: bold;
+}
+body.light footer.flex p span{
+  color: #1c2541;
+}
+@media (max-width: 800px) {
+
+  footer.flex{
+    flex-direction: column;
+    gap: 2rem;
+    }
+
+
+
+}
