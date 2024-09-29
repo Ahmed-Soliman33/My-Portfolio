@@ -60,6 +60,7 @@ main section.right-section.flex {
 }
 
 .card {
+  height: 360px;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.16), 1px 1px 1px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(93, 188, 252, 0.3);
   border-radius: 5px;

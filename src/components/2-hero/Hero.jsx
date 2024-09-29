@@ -7,6 +7,15 @@ import { motion } from "framer-motion";
 const Hero = () => {
   const lottieRef = useRef();
 
+  const handleCVDownload = () => {
+    const link = document.createElement('a');
+    link.href = '../../../public/Ahmed-Soliman-CV.pdf'; 
+    link.download = 'Ahmed-Soliman-CV.pdf'; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="hero flex" id="up">
       <div className="left-section ">
@@ -32,18 +41,36 @@ const Hero = () => {
         </motion.h1>
 
         <p className="sub-title">
-          I’m Ahmed Soliman, a passionate web developer currently in my second year at the Faculty of Computers and Artificial Intelligence, Helwan University. My primary focus is on front-end development, where I specialize in creating intuitive and dynamic web interfaces. With a strong foundation 
-          in HTML, CSS, JavaScript, and modern frameworks like React, 
-          I aim to deliver seamless user experiences. Additionally, I possess a 
-          growing knowledge of back-end technologies, allowing me to contribute to 
-          full-stack projects and collaborate effectively across development teams.
+          I’m Ahmed Soliman, a passionate web developer currently in my second
+          year at the Faculty of Computers and Artificial Intelligence, Helwan
+          University. My primary focus is on front-end development, where I
+          specialize in creating intuitive and dynamic web interfaces. With a
+          strong foundation in HTML, CSS, JavaScript, and modern frameworks like
+          React, I aim to deliver seamless user experiences. Additionally, I
+          possess a growing knowledge of back-end technologies, allowing me to
+          contribute to full-stack projects and collaborate effectively across
+          development teams.
         </p>
 
-        <div className="all-icons flex">
-          <a target="_blank" href="https://www.facebook.com/570ahmedelfares/"><div className="icon icon-facebook2"></div></a>
-          <a target="_blank" href="https://x.com/ahmed_moham222"><div className="icon icon-twitter"></div></a>
-          <a target="_blank" href="https://www.linkedin.com/in/ahmed-soliman-19901b325/"><div className="icon icon-linkedin-square"></div></a>
-          <a target="_blank" href="https://github.com/Ahmed-Soliman33"><div className="icon icon-github"></div></a>
+        <div className="container-download-icons">
+          <div className="all-icons flex">
+            <a target="_blank" href="https://www.facebook.com/570ahmedelfares/">
+              <div className="icon icon-facebook2"></div>
+            </a>
+            <a target="_blank" href="https://x.com/ahmed_moham222">
+              <div className="icon icon-twitter"></div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/ahmed-soliman-19901b325/"
+            >
+              <div className="icon icon-linkedin-square"></div>
+            </a>
+            <a target="_blank" href="https://github.com/Ahmed-Soliman33">
+              <div className="icon icon-github"></div>
+            </a>
+          </div>
+          <button className="download-btn" onClick={handleCVDownload}>Download CV</button>
         </div>
       </div>
 

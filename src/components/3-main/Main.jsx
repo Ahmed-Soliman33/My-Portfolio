@@ -71,24 +71,23 @@ const Main = () => {
                 animate={{ transform: "scale(1)" }}
                 transition={{ type: "spring", damping: 8, stiffness: 50 }}
                 key={item.imgPath}
-                className="  card"
+                className="card"
               >
                 <img width={266} src={item.imgPath} alt="" />
 
                 <div style={{ width: "266px" }} className="box">
                   <h1 className="title">{item.projectTitle}</h1>
                   <p className="sub-title">
-                    Lorem ipsum dolor sit amet consectetur elit adipisicing . Ex
-                    tempore dolor in, accusantium laudantium accusamus.
+                    {item.dateils}
                   </p>
 
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">
-                      <div className="icon-link"></div>
-                      <div className="icon-github"></div>
+                      <a target="_blank" href={item.link}><div className="icon-link"></div></a>
+                      <a target="_blank" href={item.github}><div className="icon-github"></div></a>
                     </div>
 
-                    <a className="link flex" href="">
+                    <a className="link flex" href={item.link}>
                       more
                       <span
                         style={{ alignSelf: "end" }}

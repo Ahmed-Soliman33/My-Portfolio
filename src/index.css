@@ -67,7 +67,7 @@ li {
   list-style: none;
 }
 a {
-  all: unset; /*  يلغي الاعدادات الافتراضيةاللي خدها قبل كده*/
+  all: unset; 
 
   transition: 0.2s;
 }
