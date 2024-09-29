@@ -1,7 +1,7 @@
-My Portfolio Website
+**My Portfolio Website
 Overview: My Portfolio Website is an interactive and visually engaging showcase of my work as a web developer. Built using React, Framer Motion, and Vite, this website highlights my projects, skills, and experiences while providing a smooth user experience with stunning animations.
 
-Key Features:
+##Key Features:
 
 Dynamic Homepage:
 
