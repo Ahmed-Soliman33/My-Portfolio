@@ -10,7 +10,7 @@ const Hero = () => {
   const handleCVDownload = () => {
     const link = document.createElement('a');
     link.href = './Ahmed-Soliman-CV.pdf'; 
-    link.download = 'Ahmed-Soliman-CV.pdf'; 
+    link.download = 'Ahmed-Soliman-Front-End.pdf'; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

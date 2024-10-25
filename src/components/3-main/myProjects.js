@@ -1,12 +1,48 @@
 export const myProjects = [
   {
-    projectTitle: "React E-Commerce",
+    projectTitle: "E-Commerce Platform",
     category: ["react"],
     imgPath: "./images/E-Commerce-React.png",
     dateils:
       "A dynamic online shopping platform that provides users with a seamless shopping experience. Built with React, this project showcases a range of products, supports user interactions, and integrates routing for easy navigation.",
     link: "https://react-e-commerce-a6a17.web.app/",
     github: "https://github.com/Ahmed-Soliman33/React-E-Commerce",
+  },
+  {
+    projectTitle: "Around the world",
+    category: ["react"],
+    imgPath: "./images/around the world.png",
+    dateils:
+      "The Around the World project is an interactive React app that lets users explore countries, landmarks, and cultures globally. With dynamic content and a responsive design, it provides a seamless virtual travel experience.",
+    link: "https://around-the-world-gamma.vercel.app/",
+    github: "https://github.com/Ahmed-Soliman33/Around-the-world",
+  },
+  {
+    projectTitle: "Kanban Board",
+    category: ["react"],
+    imgPath: "./images/kanban.png",
+    dateils:
+      "The Kanban Board project is a task management app built with React, and Vite. The app allows users to create, edit, and delete tasks, as well as track their progress. The app provides a smooth and intuitive user experience.",
+    link: "https://kanban-board-gx2i.vercel.app/",
+    github: "https://github.com/Ahmed-Soliman33/Kanban-Board",
+  },
+  {
+    projectTitle: "Calorie Tracker",
+    category: ["react"],
+    imgPath: "./images/tracker.png",
+    dateils:
+      "The Calorie Tracker project is a React app aimed at helping users monitor their daily calorie intake. With a user-friendly interface and easy-to-use features, it provides a smooth and efficient calorie tracking experience.",
+    link: "https://calorie-tracker-rouge.vercel.app/",
+    github: "https://github.com/Ahmed-Soliman33/Calorie-Tracker",
+  },
+  {
+    projectTitle: "News Feed",
+    category: ["react"],
+    imgPath: "./images/news-feed.png",
+    dateils:
+      " A news feed application that allows users to create and share news articles. Built with React and Firebase, this project provides a user-friendly interface for sharing and viewing news articles.",
+    link: "https://drive.google.com/file/d/1AYE6QdgTy1ue5voiMa1ekBDFBhUWY0uG/view?usp=sharing",
+    github: "https://github.com/Ahmed-Soliman33/news-feed",
   },
   {
     projectTitle: "VivaDecor Design",
@@ -17,35 +53,6 @@ export const myProjects = [
     link: "https://ahmed-soliman33.github.io/VivaDecor-Design/",
     github: "https://github.com/Ahmed-Soliman33/VivaDecor-Design",
   },
-  {
-    projectTitle: "ToDo List with js",
-    category: ["js"],
-    imgPath: "./images/ToDo-js.png",
-    dateils:
-      "This To-Do List application allows users to manage their tasks effectively by adding, editing, deleting, and marking tasks as completed. It aims to provide a clean and user-friendly interface to enhance productivity.",
-    link: "https://ahmed-soliman33.github.io/js-ToDo-List/",
-    github: "https://github.com/Ahmed-Soliman33/js-ToDo-List",
-  },
-
-  {
-    projectTitle: "E-commerce Design",
-    category: ["css"],
-    imgPath: "./images/E-commerce-design.png",
-    dateils:
-      "This design showcases a visually appealing and user-friendly interface for online shopping. The project focuses on providing an attractive layout, seamless navigation, and an engaging user experience.",
-    link: "https://ahmed-soliman33.github.io/HTML-CSS-Ecommerce-Project/",
-    github: "https://github.com/Ahmed-Soliman33/HTML-CSS-Ecommerce-Project",
-  },
-  {
-    projectTitle: "React ToDo List",
-    category: ["react"],
-    imgPath: "./images/ToDo-React.png",
-    dateils:
-      "This React To-Do List application allows users to manage their tasks effectively by adding, editing, deleting, and marking tasks as completed. Built with React, this project focuses on providing a smooth and interactive user experience.",
-    link: "https://todo-list-react-dd95d.web.app/",
-    github: "https://github.com/Ahmed-Soliman33/React-ToDo-List",
-  },
-
   {
     projectTitle: "Solar Panel Design",
     category: ["css"],
@@ -60,7 +67,7 @@ export const myProjects = [
     category: ["react"],
     imgPath: "./images/Portfolio.png",
     dateils:
-      "My Portfolio Website is an interactive and visually engaging showcase of my work as a web developer. Built using React, Framer Motion, and Vite, this website highlights my projects, skills, and experiences while providing a smooth user experience with stunning animations.",
+      "Is an interactive and visually engaging showcase of my work as a web developer. Built using React, Framer Motion, and Vite, this website highlights my projects, skills, and experiences while providing a smooth user experience with stunning animations.",
     link: "https://my-portfolio-4e023.web.app/",
     github: "https://github.com/Ahmed-Soliman33/My-Portfolio",
   },

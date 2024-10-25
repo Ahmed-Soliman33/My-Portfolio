@@ -22,7 +22,7 @@ const Main = () => {
   };
 
   return (
-    <main className="flex" id="projs" >
+    <main className="flex" id="projs">
       <section className="flex  left-section">
         <button
           onClick={() => {
@@ -61,7 +61,7 @@ const Main = () => {
         </button>
       </section>
 
-      <section className=" flex right-section" >
+      <section className=" flex right-section">
         <AnimatePresence>
           {arr.map((item) => {
             return (
@@ -77,17 +77,19 @@ const Main = () => {
 
                 <div style={{ width: "266px" }} className="box">
                   <h1 className="title">{item.projectTitle}</h1>
-                  <p className="sub-title">
-                    {item.dateils}
-                  </p>
+                  <p className="sub-title">{item.dateils}</p>
 
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">
-                      <a target="_blank" href={item.link}><div className="icon-link"></div></a>
-                      <a target="_blank" href={item.github}><div className="icon-github"></div></a>
+                      <a target="_blank" href={item.link}>
+                        <div className="icon-link"></div>
+                      </a>
+                      <a target="_blank" href={item.github}>
+                        <div className="icon-github"></div>
+                      </a>
                     </div>
 
-                    <a className="link flex" href={item.link}>
+                    <a className="link flex" href={item.link} target="_blank">
                       more
                       <span
                         style={{ alignSelf: "end" }}
