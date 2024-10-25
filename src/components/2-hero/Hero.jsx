@@ -8,9 +8,9 @@ const Hero = () => {
   const lottieRef = useRef();
 
   const handleCVDownload = () => {
-    const link = document.createElement('a');
-    link.href = './Ahmed-Soliman-CV.pdf'; 
-    link.download = 'Ahmed-Soliman-Front-End.pdf'; 
+    const link = document.createElement("a");
+    link.href = "./Ahmed-Soliman-Fronend.pdf";
+    link.download = "Ahmed-Soliman-Front-End.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -70,7 +70,9 @@ const Hero = () => {
               <div className="icon icon-github"></div>
             </a>
           </div>
-          <button className="download-btn" onClick={handleCVDownload}>Download CV</button>
+          <button className="download-btn" onClick={handleCVDownload}>
+            Download CV
+          </button>
         </div>
       </div>
 
