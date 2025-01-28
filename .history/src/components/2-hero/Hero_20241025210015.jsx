@@ -28,7 +28,6 @@ const Hero = () => {
             src="../../me.png"
             className="avatar"
           />
-          src/me.png
           <div className="icon-verified"></div>
         </div>
 
