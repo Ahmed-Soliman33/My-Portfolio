@@ -9,8 +9,8 @@ const Hero = () => {
 
   const handleCVDownload = () => {
     const link = document.createElement("a");
-    link.href = "./Ahmed-Soliman-Fronend.pdf";
-    link.download = "Ahmed-Soliman-Front-End.pdf";
+    link.href = "./Ahmed_Soliman_Frontend.pdf";
+    link.download = "Ahmed_Soliman_Frontend.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
