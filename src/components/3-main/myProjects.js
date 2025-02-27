@@ -1,5 +1,14 @@
 export const myProjects = [
   {
+    projectTitle: "JungoHub – College File Management Platform",
+    category: ["react"],
+    imgPath: "./images/JungoHub.png",
+    dateils:
+      "is a platform that allows students to upload, organize, and access academic files easily. Built in 15 days, it now serves 500+ active users and continues to evolve with new features based on student feedback.",
+    link: "https://jungohub2.vercel.app/",
+    github: "https://github.com/Ahmed-Soliman33",
+  },
+  {
     projectTitle: "E-Commerce Platform",
     category: ["react"],
     imgPath: "./images/E-Commerce-React.png",
