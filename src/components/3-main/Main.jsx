@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./main.css";
 import { myProjects } from "./myProjects";
+import { CATEGORIES } from "../../constants/categories";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Main = () => {
@@ -24,41 +25,22 @@ const Main = () => {
   return (
     <main className="flex" id="projs">
       <section className="flex  left-section">
-        <button
-          onClick={() => {
-            setcurrentActive("all");
-            setArr(myProjects);
-          }}
-          className={currentActive === "all" ? "active" : null}
-        >
-          all projects
-        </button>
-
-        <button
-          onClick={() => {
-            handleClick("css");
-          }}
-          className={currentActive === "css" ? "active" : null}
-        >
-          HTML & CSS
-        </button>
-
-        <button
-          onClick={() => {
-            handleClick("js");
-          }}
-          className={currentActive === "js" ? "active" : null}
-        >
-          JavaScript
-        </button>
-        <button
-          onClick={() => {
-            handleClick("react");
-          }}
-          className={currentActive === "react" ? "active" : null}
-        >
-          React
-        </button>
+        {CATEGORIES.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => {
+              setcurrentActive(category.id);
+              if (category.id === "all") {
+                setArr(myProjects);
+              } else {
+                handleClick(category.id);
+              }
+            }}
+            className={currentActive === category.id ? "active" : null}
+          >
+            {category.label}
+          </button>
+        ))}
       </section>
 
       <section className=" flex right-section">
@@ -76,8 +58,18 @@ const Main = () => {
                 <img width={266} src={item.imgPath} alt={item.projectTitle} />
 
                 <div style={{ width: "266px" }} className="box">
-                  <h1 className="title">{item.projectTitle}</h1>
+                  <h3 className="title">{item.projectTitle}</h3>
                   <p className="sub-title">{item.details}</p>
+
+                  {item.techStack && (
+                    <div className="tech-stack">
+                      {item.techStack.map((tech, index) => (
+                        <span key={index} className="tech-badge">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">

@@ -3,32 +3,16 @@ import Header from "./components/1-header/Header";
 import Main from "./components/3-main/Main";
 import Contact from "./components/4-contact/Contact";
 import Footer from "./components/5-footer/Footer";
-import { useEffect, useState } from "react";
+import { useScrollPosition } from "./hooks/useScrollPosition";
 
 function App() {
-  const [showScrollBTN, setshowScrollBTN] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setshowScrollBTN(true);
-      } else {
-        setshowScrollBTN(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function to prevent memory leak
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const showScrollBTN = useScrollPosition(300);
   return (
     <div id="up" className="container">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header />
 
-      <Hero />
+      <Hero id="main-content" />
       <div className="divider" />
       <Main />
       <div className="divider" />

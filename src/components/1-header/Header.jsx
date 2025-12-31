@@ -1,26 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useTheme } from "../../hooks/useTheme";
+import { NAV_ITEMS } from "../../constants/navigation";
 import "./header.css";
 
 
 const Header = () => {
   const [showModal, setshowModal] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("currentMode") ?? "dark"
-  );
+  const { theme, toggleTheme } = useTheme();
+  const menuButtonRef = useRef(null);
 
+  // Handle ESC key to close modal and return focus
   useEffect(() => {
-    if (theme === "light") {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
-    } else {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
+    const handleEscape = (event) => {
+      if (event.key === "Escape" && showModal) {
+        setshowModal(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    if (showModal) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
     }
-  }, [theme]);
+  }, [showModal]);
 
   return (
     <header className="flex">
       <button
+        ref={menuButtonRef}
         onClick={() => {
           setshowModal(true);
         }}
@@ -32,29 +39,16 @@ const Header = () => {
 
       <nav>
         <ul className="flex">
-          <li>
-            <a href="#up" >About</a>
-          </li>
-          <li>
-            <a href="#projs" >Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id}>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
         </ul>
       </nav>
 
       <button
-        onClick={() => {
-          // Send value to LS
-          localStorage.setItem(
-            "currentMode",
-            theme === "dark" ? "light" : "dark"
-          );
-
-          // get value from LS
-          setTheme(localStorage.getItem("currentMode"));
-        }}
+        onClick={toggleTheme}
         className="mode flex"
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         aria-pressed={theme === "light"}
@@ -74,25 +68,24 @@ const Header = () => {
                 className="icon-close"
                 onClick={() => {
                   setshowModal(false);
+                  menuButtonRef.current?.focus();
                 }}
                 aria-label="Close navigation menu"
               />
             </li>
-            <li>
-              <a href="#up" onClick={() => {
-                  setshowModal(false);
-                }} >About</a>
-            </li>
-            <li>
-              <a href="#projs" onClick={() => {
-                  setshowModal(false);
-                }} >Projects</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => {
-                  setshowModal(false);
-                }} >Contact</a>
-            </li>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={item.href}
+                  onClick={() => {
+                    setshowModal(false);
+                    menuButtonRef.current?.focus();
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}

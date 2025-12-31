@@ -25,7 +25,7 @@ const Hero = () => {
             animate={{ transform: "scale(1.1)" }}
             transition={{ damping: 6, type: "spring", stiffness: 100 }}
             draggable="false"
-            src="../../me-avatar.jpg"
+            src="/me-avatar.jpg"
             className="avatar"
             alt="Ahmed Soliman - Frontend Developer"
           />
@@ -38,11 +38,20 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Front-End Developer
+          Ahmed Soliman
         </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.2 }}
+          className="subtitle-role"
+        >
+          Front-End Developer
+        </motion.p>
+
         <p className="sub-title">
-          I’m Ahmed Soliman, a passionate web developer currently in my second
+          I'm a passionate web developer currently in my second
           year at the Faculty of Computers and Artificial Intelligence, Helwan
           University. My primary focus is on front-end development, where I
           specialize in creating intuitive and dynamic web interfaces. With a
@@ -55,10 +64,20 @@ const Hero = () => {
 
         <div className="container-download-icons">
           <div className="all-icons flex">
-            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/570ahmedelfares/" aria-label="Visit my Facebook profile">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/570ahmedelfares/"
+              aria-label="Visit my Facebook profile"
+            >
               <div className="icon icon-facebook2"></div>
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://x.com/ahmed_moham222" aria-label="Follow me on Twitter">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/ahmed_moham222"
+              aria-label="Follow me on Twitter"
+            >
               <div className="icon icon-twitter"></div>
             </a>
             <a
@@ -69,7 +88,12 @@ const Hero = () => {
             >
               <div className="icon icon-linkedin-square"></div>
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ahmed-Soliman33" aria-label="View my GitHub profile">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/Ahmed-Soliman33"
+              aria-label="View my GitHub profile"
+            >
               <div className="icon icon-github"></div>
             </a>
           </div>
