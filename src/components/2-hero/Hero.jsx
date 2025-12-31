@@ -25,8 +25,9 @@ const Hero = () => {
             animate={{ transform: "scale(1.1)" }}
             transition={{ damping: 6, type: "spring", stiffness: 100 }}
             draggable="false"
-            src="../../me.png"
+            src="../../me-avatar.jpg"
             className="avatar"
+            alt="Ahmed Soliman - Frontend Developer"
           />
           <div className="icon-verified"></div>
         </div>
@@ -54,19 +55,21 @@ const Hero = () => {
 
         <div className="container-download-icons">
           <div className="all-icons flex">
-            <a target="_blank" href="https://www.facebook.com/570ahmedelfares/">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/570ahmedelfares/" aria-label="Visit my Facebook profile">
               <div className="icon icon-facebook2"></div>
             </a>
-            <a target="_blank" href="https://x.com/ahmed_moham222">
+            <a target="_blank" rel="noopener noreferrer" href="https://x.com/ahmed_moham222" aria-label="Follow me on Twitter">
               <div className="icon icon-twitter"></div>
             </a>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.linkedin.com/in/ahmed-soliman-19901b325/"
+              aria-label="Connect with me on LinkedIn"
             >
               <div className="icon icon-linkedin-square"></div>
             </a>
-            <a target="_blank" href="https://github.com/Ahmed-Soliman33">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ahmed-Soliman33" aria-label="View my GitHub profile">
               <div className="icon icon-github"></div>
             </a>
           </div>

@@ -25,9 +25,9 @@ const Header = () => {
           setshowModal(true);
         }}
         className="menu icon-menu flex"
-      >
-        {" "}
-      </button>
+        aria-label="Open navigation menu"
+        aria-expanded={showModal}
+      ></button>
       <div></div> 
 
       <nav>
@@ -56,6 +56,8 @@ const Header = () => {
           setTheme(localStorage.getItem("currentMode"));
         }}
         className="mode flex"
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        aria-pressed={theme === "light"}
       >
         {theme === "dark" ? (
           <span className="icon-moon-o"> </span>
@@ -66,13 +68,14 @@ const Header = () => {
 
       {showModal && (
         <div className="fixed">
-          <ul className="modal ">
+          <ul className="modal" role="dialog" aria-modal="true" aria-labelledby="mobile-nav">
             <li>
               <button
                 className="icon-close"
                 onClick={() => {
                   setshowModal(false);
                 }}
+                aria-label="Close navigation menu"
               />
             </li>
             <li>

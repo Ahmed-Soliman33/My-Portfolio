@@ -73,23 +73,23 @@ const Main = () => {
                 key={item.imgPath}
                 className="card"
               >
-                <img width={266} src={item.imgPath} alt="" />
+                <img width={266} src={item.imgPath} alt={item.projectTitle} />
 
                 <div style={{ width: "266px" }} className="box">
                   <h1 className="title">{item.projectTitle}</h1>
-                  <p className="sub-title">{item.dateils}</p>
+                  <p className="sub-title">{item.details}</p>
 
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">
-                      <a target="_blank" href={item.link}>
+                      <a target="_blank" rel="noopener noreferrer" href={item.link} aria-label={`Visit ${item.projectTitle} live site`}>
                         <div className="icon-link"></div>
                       </a>
-                      <a target="_blank" href={item.github}>
+                      <a target="_blank" rel="noopener noreferrer" href={item.github} aria-label={`View ${item.projectTitle} on GitHub`}>
                         <div className="icon-github"></div>
                       </a>
                     </div>
 
-                    <a className="link flex" href={item.link} target="_blank">
+                    <a className="link flex" href={item.link} target="_blank" rel="noopener noreferrer">
                       more
                       <span
                         style={{ alignSelf: "end" }}

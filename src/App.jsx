@@ -6,17 +6,24 @@ import Footer from "./components/5-footer/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
+  const [showScrollBTN, setshowScrollBTN] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 300) {
         setshowScrollBTN(true);
       } else {
         setshowScrollBTN(false);
       }
-    });
-  }, []);
+    };
 
-  const [showScrollBTN, setshowScrollBTN] = useState(false);
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function to prevent memory leak
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div id="up" className="container">
       <Header />
@@ -30,7 +37,7 @@ function App() {
       <Footer />
 
       <a style={{ opacity: showScrollBTN? 1 : 0, transition: "1s" }} href="#up">
-        <button className="icon-keyboard_arrow_up scroll2Top" ></button>
+        <button className="icon-keyboard_arrow_up scroll2Top" aria-label="Scroll to top"></button>
       </a>
     </div>
   );
