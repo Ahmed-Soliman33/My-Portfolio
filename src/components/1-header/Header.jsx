@@ -1,57 +1,60 @@
-import { useEffect, useState, useRef } from "react";
-import { useTheme } from "../../hooks/useTheme";
-import { NAV_ITEMS } from "../../constants/navigation";
+import { useEffect, useState } from "react";
 import "./header.css";
-
 
 const Header = () => {
   const [showModal, setshowModal] = useState(false);
-  const { theme, toggleTheme } = useTheme();
-  const menuButtonRef = useRef(null);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("currentMode") ?? "dark"
+  );
 
-  // Handle ESC key to close modal and return focus
   useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === "Escape" && showModal) {
-        setshowModal(false);
-        menuButtonRef.current?.focus();
-      }
-    };
-
-    if (showModal) {
-      document.addEventListener("keydown", handleEscape);
-      return () => document.removeEventListener("keydown", handleEscape);
+    if (theme === "light") {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+    } else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
     }
-  }, [showModal]);
+  }, [theme]);
 
   return (
     <header className="flex">
       <button
-        ref={menuButtonRef}
         onClick={() => {
           setshowModal(true);
         }}
         className="menu icon-menu flex"
-        aria-label="Open navigation menu"
-        aria-expanded={showModal}
-      ></button>
-      <div></div> 
+      >
+        {" "}
+      </button>
+      <div></div>
 
       <nav>
         <ul className="flex">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.id}>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
+          <li>
+            <a href="#up">About</a>
+          </li>
+          <li>
+            <a href="#projs">Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
 
       <button
-        onClick={toggleTheme}
+        onClick={() => {
+          // Send value to LS
+          localStorage.setItem(
+            "currentMode",
+            theme === "dark" ? "light" : "dark"
+          );
+
+          // get value from LS
+          setTheme(localStorage.getItem("currentMode"));
+        }}
         className="mode flex"
-        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-        aria-pressed={theme === "light"}
       >
         {theme === "dark" ? (
           <span className="icon-moon-o"> </span>
@@ -62,30 +65,45 @@ const Header = () => {
 
       {showModal && (
         <div className="fixed">
-          <ul className="modal" role="dialog" aria-modal="true" aria-labelledby="mobile-nav">
+          <ul className="modal ">
             <li>
               <button
                 className="icon-close"
                 onClick={() => {
                   setshowModal(false);
-                  menuButtonRef.current?.focus();
                 }}
-                aria-label="Close navigation menu"
               />
             </li>
-            {NAV_ITEMS.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={item.href}
-                  onClick={() => {
-                    setshowModal(false);
-                    menuButtonRef.current?.focus();
-                  }}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href="#up"
+                onClick={() => {
+                  setshowModal(false);
+                }}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projs"
+                onClick={() => {
+                  setshowModal(false);
+                }}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={() => {
+                  setshowModal(false);
+                }}
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
       )}

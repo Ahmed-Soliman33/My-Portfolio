@@ -1,0 +1,28 @@
+{
+  "name": "Ahmed Soliman - Frontend Developer Portfolio",
+  "short_name": "AS Portfolio",
+  "description": "Frontend Developer specializing in React and modern web technologies",
+  "theme_color": "#10c8f7",
+  "background_color": "#01050a",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "development", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

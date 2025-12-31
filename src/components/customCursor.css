@@ -1,0 +1,65 @@
+/* Custom Cursor Effect - Desktop Only */
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+
+  a, button, input, textarea, .card, .tech-badge {
+    cursor: none;
+  }
+}
+
+/* Custom cursor dot (center point) */
+.custom-cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+  mix-blend-mode: difference;
+  will-change: transform, left, top;
+}
+
+/* Custom cursor outline (larger circle) */
+.custom-cursor-outline {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: center center;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  opacity: 0.5;
+  margin-left: -20px;
+  margin-top: -20px;
+  will-change: transform, left, top;
+}
+
+.custom-cursor-dot {
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+/* Light mode adjustments */
+body.light .custom-cursor-dot {
+  background-color: #038ae4;
+}
+
+body.light .custom-cursor-outline {
+  border-color: #038ae4;
+}
+
+/* Animation when hovering interactive elements */
+@media (min-width: 1024px) {
+  a:hover, button:hover, .card:hover {
+    transform-origin: center;
+  }
+}

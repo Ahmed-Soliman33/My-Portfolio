@@ -6,38 +6,6 @@
 
 section.hero {
   margin-top: 3rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Gradient mesh background */
-section.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(16, 200, 247, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-section.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(16, 200, 247, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-section.hero > * {
-  position: relative;
-  z-index: 1;
 }
 
 /* ========================
@@ -69,27 +37,23 @@ section.hero .avatar {
 }
 
 section.hero h1.title {
-  font-size: var(--text-5xl);
-  font-weight: var(--font-bold);
-  line-height: 1.1;
+  font-size: 2.85rem;
+  line-height: 3.3rem;
   margin: 24px 0 12px 0;
   color: var(--title);
-  letter-spacing: -0.02em;
 }
 
 section.hero p.subtitle-role {
-  font-size: var(--text-xl);
-  font-weight: var(--font-medium);
+  font-size: 1.25rem;
+  font-weight: 500;
   color: var(--blue);
   margin-bottom: 24px;
-  letter-spacing: -0.01em;
 }
 
 section.hero p.sub-title {
   color: var(--subtitle);
-  font-size: var(--text-base);
-  font-weight: var(--font-normal);
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.65rem;
   margin-bottom: 32px;
 }
 

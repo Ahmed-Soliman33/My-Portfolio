@@ -61,16 +61,6 @@ const Main = () => {
                   <h3 className="title">{item.projectTitle}</h3>
                   <p className="sub-title">{item.details}</p>
 
-                  {item.techStack && (
-                    <div className="tech-stack">
-                      {item.techStack.map((tech, index) => (
-                        <span key={index} className="tech-badge">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">
                       <a target="_blank" rel="noopener noreferrer" href={item.link} aria-label={`Visit ${item.projectTitle} live site`}>
