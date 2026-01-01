@@ -1,3 +1,5 @@
+import jungohubImage from "../../assets/jungohub.png";
+
 export const myProjects = [
   {
     projectTitle: "Skyshot – Aerial Photography",
@@ -55,7 +57,7 @@ export const myProjects = [
   {
     projectTitle: "Jungo Hub – University Student Portal",
     category: ["live"],
-    imgPath: "/images/jungohub.png",
+    imgPath: jungohubImage,
     dateils:
       "A practical and streamlined hub for university students, providing access to study materials, academic news, and FAQs. A direct, user-friendly interface designed for quick access to academic content.",
     link: "https://jungohub2.vercel.app/",
