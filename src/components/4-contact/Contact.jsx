@@ -7,7 +7,7 @@ import contactAnimation from "../../../public/animation/contact-anim.json";
 const Contact = () => {
   const [state, handleSubmit] = useForm("xzzpookd");
   return (
-    <section className="contact-us" id="contact" >
+    <section className="contact-us" id="contact">
       <h1 className="title">
         <span className="icon-envelope"> </span>
         Contact me
@@ -28,8 +28,8 @@ const Contact = () => {
               name="email"
               id="email"
             />
-            <ValidationError 
-              prefix="Email" 
+            <ValidationError
+              prefix="Email"
               field="email"
               errors={state.errors}
             />
@@ -38,8 +38,8 @@ const Contact = () => {
           <div className="flex" style={{ marginTop: "24px" }}>
             <label htmlFor="message">Your message:</label>
             <textarea required name="message" id="message"></textarea>
-            <ValidationError 
-              prefix="Message" 
+            <ValidationError
+              prefix="Message"
               field="message"
               errors={state.errors}
             />
@@ -61,12 +61,14 @@ const Contact = () => {
               />
               Your message has been sent successfully 👌
             </p>
-          ) : '' }
+          ) : (
+            ""
+          )}
         </form>
         <div className=" animation">
           <Lottie
             className="contact-animation"
-            style={{ height: 355 , marginTop : -50 }}
+            style={{ height: 355, marginTop: -50 }}
             animationData={contactAnimation}
           />
         </div>

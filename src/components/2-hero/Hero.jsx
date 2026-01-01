@@ -3,6 +3,7 @@ import "./hero.css";
 import devAnimation from "../../../public/animation/laptop-animation.json";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { MdEmail } from "react-icons/md";
 
 const Hero = () => {
   const lottieRef = useRef();
@@ -58,7 +59,7 @@ const Hero = () => {
               <div className="icon icon-facebook2"></div>
             </a>
             <a target="_blank" href="https://x.com/ahmed_moham222">
-              <div className="icon icon-twitter"></div>
+              <MdEmail size={28} className="icon" />
             </a>
             <a
               target="_blank"

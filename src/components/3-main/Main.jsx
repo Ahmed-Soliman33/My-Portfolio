@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./main.css";
 import { myProjects } from "./myProjects";
 import { AnimatePresence, motion } from "framer-motion";
+import { FaLock, FaVideo } from "react-icons/fa";
+import { MdDeveloperMode } from "react-icons/md";
 
 const Main = () => {
   const [currentActive, setcurrentActive] = useState("all");
@@ -36,28 +38,20 @@ const Main = () => {
 
         <button
           onClick={() => {
-            handleClick("css");
+            handleClick("live");
           }}
-          className={currentActive === "css" ? "active" : null}
+          className={currentActive === "live" ? "active" : null}
         >
-          HTML & CSS
+          Live Projects
         </button>
 
         <button
           onClick={() => {
-            handleClick("js");
+            handleClick("development");
           }}
-          className={currentActive === "js" ? "active" : null}
+          className={currentActive === "development" ? "active" : null}
         >
-          JavaScript
-        </button>
-        <button
-          onClick={() => {
-            handleClick("react");
-          }}
-          className={currentActive === "react" ? "active" : null}
-        >
-          React
+          Under Development
         </button>
       </section>
 
@@ -73,23 +67,54 @@ const Main = () => {
                 key={item.imgPath}
                 className="card"
               >
-                <img width={266} src={item.imgPath} alt="" />
+                <div className={`status-badge ${item.status}`}>
+                  {item.status === "live" ? (
+                    "✓ Live"
+                  ) : (
+                    <>
+                      <MdDeveloperMode /> In Development
+                    </>
+                  )}
+                </div>
 
-                <div style={{ width: "266px" }} className="box">
+                <img width={300} src={item.imgPath} alt="" />
+
+                <div style={{ width: "286px" }} className="box">
                   <h1 className="title">{item.projectTitle}</h1>
                   <p className="sub-title">{item.dateils}</p>
 
                   <div className="flex icons">
                     <div style={{ gap: "11px" }} className="flex">
-                      <a target="_blank" href={item.link}>
+                      <a target="_blank" rel="noreferrer" href={item.link}>
                         <div className="icon-link"></div>
                       </a>
-                      <a target="_blank" href={item.github}>
-                        <div className="icon-github"></div>
-                      </a>
+                      {item.video && (
+                        <a target="_blank" rel="noreferrer" href={item.video}>
+                          <div className="icon-video">
+                            <FaVideo />
+                          </div>
+                        </a>
+                      )}
+                      {item.github === null ? (
+                        <div
+                          className="icon-lock-wrapper"
+                          title="Private Repository"
+                        >
+                          <FaLock className="icon-lock" />
+                        </div>
+                      ) : (
+                        <a target="_blank" rel="noreferrer" href={item.github}>
+                          <div className="icon-github"></div>
+                        </a>
+                      )}
                     </div>
 
-                    <a className="link flex" href={item.link} target="_blank">
+                    <a
+                      className="link flex"
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       more
                       <span
                         style={{ alignSelf: "end" }}

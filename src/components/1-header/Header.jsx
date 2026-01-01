@@ -1,95 +1,108 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./header.css";
 
+const THEME_STORAGE_KEY = "currentMode";
+const THEMES = {
+  DARK: "dark",
+  LIGHT: "light",
+};
+
+const NAV_LINKS = [
+  { href: "#up", label: "About" },
+  { href: "#projs", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 const Header = () => {
-  const [showModal, setshowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [theme, setTheme] = useState(
-    localStorage.getItem("currentMode") ?? "dark"
+    () => localStorage.getItem(THEME_STORAGE_KEY) ?? THEMES.DARK
   );
 
   useEffect(() => {
-    if (theme === "light") {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
-    } else {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-    }
+    document.body.classList.remove(THEMES.LIGHT, THEMES.DARK);
+    document.body.classList.add(theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && showModal) {
+        setShowModal(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [showModal]);
+
+  const toggleTheme = useCallback(() => {
+    const newTheme = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
+    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    setTheme(newTheme);
+  }, [theme]);
+
+  const closeModal = useCallback(() => {
+    setShowModal(false);
+  }, []);
+
+  const handleBackdropClick = useCallback((e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  }, [closeModal]);
 
   return (
     <header className="flex">
       <button
-        onClick={() => {
-          setshowModal(true);
-        }}
+        onClick={() => setShowModal(true)}
         className="menu icon-menu flex"
-      >
-        {" "}
-      </button>
-      <div></div> 
+        aria-label="Open navigation menu"
+        aria-expanded={showModal}
+      />
 
-      <nav>
+      <div />
+
+      <nav aria-label="Main navigation">
         <ul className="flex">
-          <li>
-            <a href="#up" >About</a>
-          </li>
-          <li>
-            <a href="#projs" >Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
         </ul>
       </nav>
 
       <button
-        onClick={() => {
-          // Send value to LS
-          localStorage.setItem(
-            "currentMode",
-            theme === "dark" ? "light" : "dark"
-          );
-
-          // get value from LS
-          setTheme(localStorage.getItem("currentMode"));
-        }}
+        onClick={toggleTheme}
         className="mode flex"
+        aria-label={`Switch to ${theme === THEMES.DARK ? "light" : "dark"} mode`}
       >
-        {theme === "dark" ? (
-          <span className="icon-moon-o"> </span>
-        ) : (
-          <span className="icon-sun"> </span>
-        )}
+        <span className={theme === THEMES.DARK ? "icon-moon-o" : "icon-sun"} />
       </button>
 
       {showModal && (
-        <div className="fixed">
-          <ul className="modal ">
+        <div
+          className="fixed"
+          onClick={handleBackdropClick}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
+          <ul className="modal">
             <li>
               <button
                 className="icon-close"
-                onClick={() => {
-                  setshowModal(false);
-                }}
+                onClick={closeModal}
+                aria-label="Close navigation menu"
               />
             </li>
-            <li>
-              <a href="#up" onClick={() => {
-                  setshowModal(false);
-                }} >About</a>
-            </li>
-            <li>
-              <a href="#projs" onClick={() => {
-                  setshowModal(false);
-                }} >Projects</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => {
-                  setshowModal(false);
-                }} >Contact</a>
-            </li>
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} onClick={closeModal}>
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
