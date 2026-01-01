@@ -4,6 +4,7 @@ import devAnimation from "../../../public/animation/laptop-animation.json";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   const lottieRef = useRef();
@@ -38,37 +39,47 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Front-End Developer
+          Front-End Engineer
         </motion.h1>
 
         <p className="sub-title">
-          I’m Ahmed Soliman, a passionate web developer currently in my second
-          year at the Faculty of Computers and Artificial Intelligence, Helwan
-          University. My primary focus is on front-end development, where I
-          specialize in creating intuitive and dynamic web interfaces. With a
-          strong foundation in HTML, CSS, JavaScript, and modern frameworks like
-          React, I aim to deliver seamless user experiences. Additionally, I
-          possess a growing knowledge of back-end technologies, allowing me to
-          contribute to full-stack projects and collaborate effectively across
-          development teams.
+          Front-End Developer with nearly 2 years of experience building
+          responsive, high-performance web applications for Saudi market and
+          international clients. Delivered 10+ production projects with modern
+          UI/UX design, seamless animations, and exceptional user experiences.
+          <br />
+          Specializing in React.js ecosystem with TypeScript, I create
+          pixel-perfect implementations from Figma designs and collaborate
+          effectively with backend teams for full-stack integration. Currently
+          pursuing Computer Science at Helwan University while working with
+          clients across e-commerce, fintech, and marketing sectors.
         </p>
 
         <div className="container-download-icons">
           <div className="all-icons flex">
-            <a target="_blank" href="https://www.facebook.com/570ahmedelfares/">
-              <div className="icon icon-facebook2"></div>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.facebook.com/570ahmedelfares/"
+            >
+              <FaFacebook size={24} className="icon" />
             </a>
-            <a target="_blank" href="https://x.com/ahmed_moham222">
-              <MdEmail size={28} className="icon" />
+            <a href="mailto:ahmed.soliman202005@gmail.com">
+              <MdEmail size={26} className="icon" />
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/ahmed-soliman-19901b325/"
             >
-              <div className="icon icon-linkedin-square"></div>
+              <FaLinkedin size={24} className="icon" />
             </a>
-            <a target="_blank" href="https://github.com/Ahmed-Soliman33">
-              <div className="icon icon-github"></div>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/Ahmed-Soliman33"
+            >
+              <FaGithub size={24} className="icon" />
             </a>
           </div>
           <button className="download-btn" onClick={handleCVDownload}>

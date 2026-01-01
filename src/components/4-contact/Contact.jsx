@@ -37,7 +37,14 @@ const Contact = () => {
 
           <div className="flex" style={{ marginTop: "24px" }}>
             <label htmlFor="message">Your message:</label>
-            <textarea required name="message" id="message"></textarea>
+            <textarea
+              required
+              name="message"
+              id="message"
+              style={{
+                resize: "none",
+              }}
+            ></textarea>
             <ValidationError
               prefix="Message"
               field="message"
