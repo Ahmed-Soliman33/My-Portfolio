@@ -38,7 +38,7 @@ export const myProjects = [
     category: ["live"],
     imgPath: "/images/olyanstore.png",
     dateils:
-      "Customized Salla/Zid theme using Advanced CSS to create a modern, high-tech interface for an electronics and gadgets store. Redesigned the hero section and navigation bar to enhance user experience (UX) and ensure fully responsive behavior across mobile devices.",
+      "Customized Salla theme using Advanced CSS to create a modern, high-tech interface for an electronics and gadgets store. Redesigned the hero section and navigation bar to enhance user experience (UX) and ensure fully responsive behavior across mobile devices.",
     link: "https://olyanstore.com/ar#",
     github: null,
     status: "live",
