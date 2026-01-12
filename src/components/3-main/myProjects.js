@@ -33,7 +33,26 @@ export const myProjects = [
     github: null,
     status: "development",
   },
-
+  {
+    projectTitle: "Olyan Store – Electronics & Gadgets",
+    category: ["live"],
+    imgPath: "/images/olyanstore.png",
+    dateils:
+      "Customized Salla/Zid theme using Advanced CSS to create a modern, high-tech interface for an electronics and gadgets store. Redesigned the hero section and navigation bar to enhance user experience (UX) and ensure fully responsive behavior across mobile devices.",
+    link: "https://olyanstore.com/ar#",
+    github: null,
+    status: "live",
+  },
+  {
+    projectTitle: "Battal Perfume – Luxury Fragrances",
+    category: ["live"],
+    imgPath: "/images/battalstore.png",
+    dateils:
+      "Tailored a standard e-commerce theme to match the brand's luxury identity using Custom CSS. Styled promotional banners and modified the header layout to highlight special offers, resulting in a cohesive and attractive visual identity for a luxury fragrance brand.",
+    link: "https://battalstore.com/ar",
+    github: null,
+    status: "live",
+  },
   {
     projectTitle: "Sowam – AI Asset Valuation",
     category: ["development"],
