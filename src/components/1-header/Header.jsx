@@ -9,7 +9,8 @@ const THEMES = {
 
 const NAV_LINKS = [
   { href: "#up", label: "About" },
-  { href: "#projs", label: "Projects" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -45,11 +46,14 @@ const Header = () => {
     setShowModal(false);
   }, []);
 
-  const handleBackdropClick = useCallback((e) => {
-    if (e.target === e.currentTarget) {
-      closeModal();
-    }
-  }, [closeModal]);
+  const handleBackdropClick = useCallback(
+    (e) => {
+      if (e.target === e.currentTarget) {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
   return (
     <header className="flex">
@@ -75,7 +79,9 @@ const Header = () => {
       <button
         onClick={toggleTheme}
         className="mode flex"
-        aria-label={`Switch to ${theme === THEMES.DARK ? "light" : "dark"} mode`}
+        aria-label={`Switch to ${
+          theme === THEMES.DARK ? "light" : "dark"
+        } mode`}
       >
         <span className={theme === THEMES.DARK ? "icon-moon-o" : "icon-sun"} />
       </button>

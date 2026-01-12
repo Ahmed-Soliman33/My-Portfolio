@@ -8,11 +8,13 @@ const Footer = () => {
           <a href="#up">About</a>
         </li>
         <li>
-          <a href="#projs">Projects</a>
+          <a href="#projects">Projects</a>
         </li>
       </ul>
 
-      <p>Coded By <span>Ahmed Soliman</span></p>
+      <p>
+        Coded By <span>Ahmed Soliman</span>
+      </p>
     </footer>
   );
 };
